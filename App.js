@@ -7,43 +7,47 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Alert, Button, Text, TextInput, View} from 'react-native';
+import QiscusMeet from 'react-native-qiscus-meet-module';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+export default class App extends Component {
+  constructor(pops) {
+    super(pops)
+    this.state = {
+      id_room: ''
+    }
+  }
+    joinRoom () {
+    if (this.state.id_room !== '') {
+		QiscusMeet.launch(this.state.id_room)
+    } else {
+      Alert.alert("ID Room tidak boleh kosong")
+    }
+  }
 
-type Props = {};
-export default class App extends Component<Props> {
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text style={styles.text_room}>Sample Qiscus Meet React Native</Text>
+        <TextInput
+            placeholder={"Input ID Room"}
+            underlineColorAndroid={"#EC407A"}
+            onChangeText={(id_room) => this.setState({id_room})}
+            style={{width:90}}
+        />
+        <Button title="Join Room" onPress={() => { this.joinRoom()}} />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  text_room :{fontWeight:"bold", fontSize:20}
+}

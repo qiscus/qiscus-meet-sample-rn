@@ -138,6 +138,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-qiscus-meet-module')
+    implementation ('com.qiscus.meet:meet-sdk:0.0.5'){ transitive = true }
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules

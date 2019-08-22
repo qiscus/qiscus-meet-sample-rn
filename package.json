@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "arioki-qiscus-meet": "0.0.9",
     "react": "16.8.3",
-    "react-native": "0.59.10"
+    "react-native": "0.59.10",
+    "react-native-qiscus-meet-module": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
