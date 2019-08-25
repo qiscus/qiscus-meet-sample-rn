@@ -40,6 +40,7 @@
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		7F00BF5AFC0A4F36B6C98469 /* libRNQiscusMeetModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A332A7A54472E825E0344 /* libRNQiscusMeetModule.a */; };
+		BECF6D5460B940DBA2CD4631 /* libRNJitsiMeet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0F81395E5748AD806F3172 /* libRNJitsiMeet.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -349,6 +350,8 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		106A79914B1C4D88AFE017E8 /* RNQiscusMeetModule.xcodeproj */ = {isa = PBXFileReference; name = "RNQiscusMeetModule.xcodeproj"; path = "../node_modules/react-native-qiscus-meet-module/ios/RNQiscusMeetModule.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		B74A332A7A54472E825E0344 /* libRNQiscusMeetModule.a */ = {isa = PBXFileReference; name = "libRNQiscusMeetModule.a"; path = "libRNQiscusMeetModule.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		832E2211BE4D4836A60FAC59 /* RNJitsiMeet.xcodeproj */ = {isa = PBXFileReference; name = "RNJitsiMeet.xcodeproj"; path = "../node_modules/react-native-qiscus-meet/ios/RNJitsiMeet.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		AF0F81395E5748AD806F3172 /* libRNJitsiMeet.a */ = {isa = PBXFileReference; name = "libRNJitsiMeet.a"; path = "libRNJitsiMeet.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +381,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				7F00BF5AFC0A4F36B6C98469 /* libRNQiscusMeetModule.a in Frameworks */,
+				BECF6D5460B940DBA2CD4631 /* libRNJitsiMeet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +572,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				106A79914B1C4D88AFE017E8 /* RNQiscusMeetModule.xcodeproj */,
+				832E2211BE4D4836A60FAC59 /* RNJitsiMeet.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1196,10 +1201,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-qiscus-meet-module\ios",
+					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 			};
 			name = Debug;
@@ -1222,10 +1229,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-qiscus-meet-module\ios",
+					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 			};
 			name = Release;
@@ -1249,6 +1258,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-qiscus-meet-module\ios",
+					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 			};
 			name = Debug;
@@ -1271,6 +1281,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-qiscus-meet-module\ios",
+					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 			};
 			name = Release;
@@ -1301,10 +1312,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-qiscus-meet-module\ios",
+					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 			};
 			name = Debug;
@@ -1335,10 +1348,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-qiscus-meet-module\ios",
+					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 			};
 			name = Release;
@@ -1368,10 +1383,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-qiscus-meet-module\ios",
+					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 			};
 			name = Debug;
@@ -1401,10 +1418,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-qiscus-meet-module\ios",
+					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 			};
 			name = Release;

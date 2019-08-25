@@ -1,7 +1,5 @@
 rootProject.name = 'qiscusMeetSampleRN'
-include ':react-native-qiscus-meet-module'
-project(':react-native-qiscus-meet-module').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-qiscus-meet-module/android')
-include ':qiscus-meet-react-native-module'
-project(':qiscus-meet-react-native-module').projectDir = new File(rootProject.projectDir, '../node_modules/qiscus-meet-react-native-module/android')
+include ':react-native-qiscus-meet'
+project(':react-native-qiscus-meet').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-qiscus-meet/android')
 
 include ':app'

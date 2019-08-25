@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {Alert, Button, Text, TextInput, View} from 'react-native';
-import QiscusMeet from 'react-native-qiscus-meet-module';
+import QiscusMeet, { QiscusMeetEvents} from 'react-native-qiscus-meet';
 
 export default class App extends Component {
   constructor(pops) {
@@ -17,15 +17,16 @@ export default class App extends Component {
       id_room: ''
     }
   }
-    joinRoom () {
-    if (this.state.id_room !== '') {
-		QiscusMeet.launch(this.state.id_room)
-    } else {
-      Alert.alert("ID Room tidak boleh kosong")
-    }
+  joinRoom () {
+    QiscusMeet.initialize();
+    QiscusMeetEvents.addListener('CONFERENCE_LEFT', (data) => {
+        // this.props.navigation.navigate("Home")
+    });
+      setTimeout(() => {
+        QiscusMeet.call("https://meet.qiscus.com/"+this.state.id_room);
+      }, 2000);
   }
-
-
+  
   render() {
     return (
       <View style={styles.container}>
