@@ -35,9 +35,12 @@ export default class App extends Component {
             placeholder={"Input ID Room"}
             underlineColorAndroid={"#EC407A"}
             onChangeText={(id_room) => this.setState({id_room})}
-            style={{width:90}}
+            style={styles.input}
         />
-        <Button title="Join Room" onPress={() => { this.joinRoom()}} />
+        <Button 
+        style={styles.submitButton}
+        title="Join Room" 
+        onPress={() => { this.joinRoom()}} />
       </View>
     );
   }
@@ -49,6 +52,25 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  input: {
+    width: 100,
+    height: 35,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderBottomWidth: 1
+  },
+  submitButton: {
+    backgroundColor: "#9aca62",
+    borderRadius: 2,
+    fontStyle: "normal",
+    fontWeight: "600",
+    fontSize: 12,
+    color: "white",
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    textTransform: "uppercase",
+    alignItems: "center"
   },
   text_room :{fontWeight:"bold", fontSize:20}
 }
