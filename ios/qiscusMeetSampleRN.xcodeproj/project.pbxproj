@@ -1390,7 +1390,7 @@
 					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 				INFOPLIST_FILE = qiscusMeetSampleRN/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**";
 				OTHER_LDFLAGS = (
@@ -1398,9 +1398,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiscusdev.meet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiscus.meet;
 				PRODUCT_NAME = qiscusMeetSampleRN;
-				PROVISIONING_PROFILE_SPECIFIER = QiscusDev;
+				PROVISIONING_PROFILE_SPECIFIER = "Qiscus Meet";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1413,7 +1413,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QG8KA4P8TE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**";
 				HEADER_SEARCH_PATHS = (
@@ -1422,7 +1422,7 @@
 					"$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**",
 				);
 				INFOPLIST_FILE = qiscusMeetSampleRN/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-qiscus-meet/ios/**";
 				OTHER_LDFLAGS = (
@@ -1430,9 +1430,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiscusdev.meet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiscus.meet;
 				PRODUCT_NAME = qiscusMeetSampleRN;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Qiscus Meet";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
