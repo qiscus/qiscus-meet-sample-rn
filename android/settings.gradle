@@ -1,5 +1,3 @@
-rootProject.name = 'qiscusMeetSampleRN'
-include ':react-native-qiscus-meet'
-project(':react-native-qiscus-meet').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-qiscus-meet/android')
-
+rootProject.name = 'Exemple'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'

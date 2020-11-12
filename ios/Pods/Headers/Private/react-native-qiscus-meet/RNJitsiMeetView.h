@@ -1,0 +1,1 @@
+../../../../../node_modules/react-native-qiscus-meet/ios/RNJitsiMeetView.h

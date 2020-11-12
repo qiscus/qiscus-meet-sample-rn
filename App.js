@@ -1,76 +1,84 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { useEffect } from 'react';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import QiscusMeet, { QiscusMeetView } from 'react-native-qiscus-meet';
 
-import React, {Component} from 'react';
-import {Alert, Button, Text, TextInput, View} from 'react-native';
-import QiscusMeet, { QiscusMeetEvents} from 'react-native-qiscus-meet';
+function App() {
 
-export default class App extends Component {
-  constructor(pops) {
-    super(pops)
-    this.state = {
-      id_room: ''
-    }
+  useEffect(() => {
+    const url = 'https://call.qiscus.com';
+    const appId = "meetstage-iec22sd";
+    QiscusMeet.setup(appId, url);
+  }, [])
+
+  function onConferenceTerminated(nativeEvent) {
+    /* Conference terminated event */
+    console.log(nativeEvent)
   }
-  joinRoom () {
-    QiscusMeet.initialize();
-    QiscusMeetEvents.addListener('CONFERENCE_LEFT', (data) => {
-        // this.props.navigation.navigate("Home")
-    });
-      setTimeout(() => {
-        QiscusMeet.call("https://meet.qiscus.com/"+this.state.id_room);
-      }, 2000);
+
+  function onConferenceJoined(nativeEvent) {
+    /* Conference joined event */
+    console.log(nativeEvent)
   }
-  
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text_room}>Sample Qiscus Meet React Native</Text>
-        <TextInput
-            placeholder={"Input ID Room"}
-            underlineColorAndroid={"#EC407A"}
-            onChangeText={(id_room) => this.setState({id_room})}
-            style={styles.input}
-        />
-        <Button 
-        style={styles.submitButton}
-        title="Join Room" 
-        onPress={() => { this.joinRoom()}} />
-      </View>
-    );
+
+  function onConferenceWillJoin(nativeEvent) {
+    /* Conference will join event */
+    console.log(nativeEvent)
   }
+
+  function endCall(nativeEvent) {
+    QiscusMeet.endCall();
+  }
+
+  function call() {
+    const userInfo = {
+          displayName: 'Meet User',
+          email: 'user@qiscus.net',
+          room: 'roomtest',
+          avatar: 'https:/gravatar.com/avatar/abc123',
+          videoMuted : true,
+          audioMuted : true,
+          audioOnly: false,
+    };
+    QiscusMeet.call(userInfo);
+  }
+
+  return (
+    <>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => endCall()}
+      >
+        <Text>End Call</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => call()}
+      >
+        <Text>Start all</Text>
+      </TouchableOpacity>
+      <QiscusMeetView
+        onConferenceTerminated={e => onConferenceTerminated(e)}
+        onConferenceJoined={e => onConferenceJoined(e)}
+        onConferenceWillJoin={e => onConferenceWillJoin(e)}
+        style={{
+          flex: 1,
+          height: '100%',
+          width: '100%',
+          marginTop: 20,
+        }}
+      />
+    </>
+  )
 }
 
-const styles = {
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+const styles = StyleSheet.create({
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    marginTop: 10,
+
   },
-  input: {
-    width: 100,
-    height: 35,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderBottomWidth: 1
-  },
-  submitButton: {
-    backgroundColor: "#9aca62",
-    borderRadius: 2,
-    fontStyle: "normal",
-    fontWeight: "600",
-    fontSize: 12,
-    color: "white",
-    paddingVertical: 15,
-    paddingHorizontal: 10,
-    textTransform: "uppercase",
-    alignItems: "center"
-  },
-  text_room :{fontWeight:"bold", fontSize:20}
-}
+});
+
+export default App;

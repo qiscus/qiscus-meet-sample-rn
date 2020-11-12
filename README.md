@@ -22,7 +22,7 @@ $ npm install react-native-cli -g
 
 # Choose folder and install the dependency
 $ cd qiscus-meet-sample-rn
-$ npm install
+$ yarn install
 
 # Run project with desired platform if you prefer use Android run code below
 $ react-native run-android
