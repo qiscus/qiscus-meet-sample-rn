@@ -40,7 +40,7 @@ public class NotificationExtender extends NotificationExtenderService {
         Log.d("OneSignalExample", "Notification displayed with id: " + displayedResult.androidNotificationId);
 
 
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class)
+        Intent intent = new Intent(NotificationExtender.this, MainActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 
