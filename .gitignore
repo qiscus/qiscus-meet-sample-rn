@@ -34,6 +34,7 @@ android/.project
 android/app/.project
 android/.settings/org.eclipse.buildship.core.prefs
 android/app/.settings/org.eclipse.buildship.core.prefs
+android/app/release/
 
 # node.js
 #
@@ -61,3 +62,4 @@ buck-out/
 *.jsbundle
 
 .vscode
+ios/Pods/
