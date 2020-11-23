@@ -1,14 +1,49 @@
 import React, { useEffect } from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import QiscusMeet, { QiscusMeetView } from 'react-native-qiscus-meet';
+import OneSignal from 'react-native-onesignal';
 
 function App() {
-
+  
   useEffect(() => {
     const url = 'https://call.qiscus.com';
     const appId = "meetstage-iec22sd";
+
+    OneSignal.init("APP_ID_ONESIGNAL", {kOSSettingsKeyAutoPrompt: false, 
+      kOSSettingsKeyInAppLaunchURL: false}); // Start OneSignal
+
+    OneSignal.inFocusDisplaying(2); // Show native notifications even if the app is open 
+
+    OneSignal.requestPermissions(); // Show the iOS prompt for push permission
+
+    OneSignal.addEventListener('received', onReceived);
+    OneSignal.addEventListener('opened', onOpened);
+
     QiscusMeet.setup(appId, url);
   }, [])
+
+
+function onReceived(notification) {
+    
+    console.log("Notification received: ", notification);
+//     console.log("Get Room", notification.payload.additionalData.room)
+//     const userInfo = {
+//       displayName: 'Meet User',
+//       email: 'user@qiscus.net',
+//       room: notification.payload.additionalData.room,
+//       avatar: 'https:/gravatar.com/avatar/abc123',
+//       videoMuted : true,
+//       audioMuted : true,
+//       audioOnly: false,
+// };
+// QiscusMeet.call(userInfo);
+}
+
+function onOpened(openResult) {
+    console.log('Message: ', openResult.notification.payload.body);
+    console.log('Data: ', openResult.notification.payload.additionalData);
+    console.log('isActive: ', openResult.notification.isAppInFocus);
+}
 
   function onConferenceTerminated(nativeEvent) {
     /* Conference terminated event */
