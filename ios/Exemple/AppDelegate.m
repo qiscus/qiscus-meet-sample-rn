@@ -11,6 +11,7 @@
 #import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
 #import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
+#import "Exemple-Swift.h"
 
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
@@ -25,12 +26,14 @@ static void InitializeFlipper(UIApplication *application) {
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 #if DEBUG
   InitializeFlipper(application);
 #endif
 
+  UNUserNotificationCenter.currentNotificationCenter.delegate = self;
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"Exemple"
@@ -44,6 +47,20 @@ static void InitializeFlipper(UIApplication *application) {
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
+}
+
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+  //do stuff
+//  static int i=1;
+//  [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result)) completionHandler {
+  NSLog(@"Received notification: %@", userInfo);
+  static int i=1;
+  [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
+//  MeetNotification *notif = [MeetNotification new];
+//  [notif createNotificationWithUserInfo:userInfo];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge

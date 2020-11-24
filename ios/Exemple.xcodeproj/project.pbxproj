@@ -16,6 +16,16 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ExempleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ExempleTests.m */; };
+		3BC53C3D256CD3290021E9FF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC53C3C256CD3290021E9FF /* UserNotifications.framework */; };
+		3BC53C3F256CD3290021E9FF /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC53C3E256CD3290021E9FF /* UserNotificationsUI.framework */; };
+		3BC53C42256CD3290021E9FF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC53C41256CD3290021E9FF /* NotificationViewController.swift */; };
+		3BC53C45256CD3290021E9FF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC53C43256CD3290021E9FF /* MainInterface.storyboard */; };
+		3BC53C49256CD3290021E9FF /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3BC53C3B256CD3290021E9FF /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3BC53C9C256CF2D30021E9FF /* MeetNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC53C9B256CF2D30021E9FF /* MeetNotification.swift */; };
+		3BC53C9D256CF2D30021E9FF /* MeetNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC53C9B256CF2D30021E9FF /* MeetNotification.swift */; };
+		3BC53CD9256CFAF20021E9FF /* call.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BC53CD8256CFAF20021E9FF /* call.wav */; };
+		3BC53CDA256CFAF20021E9FF /* call.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BC53CD8256CFAF20021E9FF /* call.wav */; };
+		5ADA3A8410EF384E16C2F591 /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CCD4629F280791ACB4C079 /* libPods-OneSignalNotificationServiceExtension.a */; };
 		67D09BCB749DD1E845A3772C /* libPods-Exemple-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F10F72B96E545727C405B8D /* libPods-Exemple-tvOS.a */; };
 		9F9E6DA37E7A0578361013E8 /* libPods-Exemple-ExempleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DC617E5A11104A61ABDF85 /* libPods-Exemple-ExempleTests.a */; };
 		E4431F016FF08BB7823CA1A8 /* libPods-Exemple.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF98C84FB00F9CE097E54171 /* libPods-Exemple.a */; };
@@ -37,7 +47,28 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "Exemple-tvOS";
 		};
+		3BC53C47256CD3290021E9FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BC53C3A256CD3290021E9FF;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3BC53C4D256CD3290021E9FF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3BC53C49256CD3290021E9FF /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -54,7 +85,21 @@
 		2D02E47B1E0B4A5D006451C7 /* Exemple-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Exemple-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Exemple-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Exemple-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC617E5A11104A61ABDF85 /* libPods-Exemple-ExempleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Exemple-ExempleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC53C3B256CD3290021E9FF /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC53C3C256CD3290021E9FF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		3BC53C3E256CD3290021E9FF /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		3BC53C41256CD3290021E9FF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		3BC53C44256CD3290021E9FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3BC53C46256CD3290021E9FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC53C53256CD3720021E9FF /* Exemple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Exemple.entitlements; path = Exemple/Exemple.entitlements; sourceTree = "<group>"; };
+		3BC53C93256CD5840021E9FF /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		3BC53C99256CF2D20021E9FF /* Exemple-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Exemple-Bridging-Header.h"; sourceTree = "<group>"; };
+		3BC53C9A256CF2D20021E9FF /* Exemple-tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Exemple-tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		3BC53C9B256CF2D30021E9FF /* MeetNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetNotification.swift; sourceTree = "<group>"; };
+		3BC53CD8256CFAF20021E9FF /* call.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = call.wav; sourceTree = "<group>"; };
 		416AADA92BBC1AFF8EF4CDE2 /* Pods-Exemple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exemple.release.xcconfig"; path = "Target Support Files/Pods-Exemple/Pods-Exemple.release.xcconfig"; sourceTree = "<group>"; };
+		42CCD4629F280791ACB4C079 /* libPods-OneSignalNotificationServiceExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OneSignalNotificationServiceExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		457E98B2C36B44D4A715E57F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		5B6965B1CE0DD734F906E18E /* Pods-Exemple-ExempleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exemple-ExempleTests.debug.xcconfig"; path = "Target Support Files/Pods-Exemple-ExempleTests/Pods-Exemple-ExempleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F201878D89B04564A7E40BA /* Pods-Exemple-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exemple-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Exemple-tvOSTests/Pods-Exemple-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F10F72B96E545727C405B8D /* libPods-Exemple-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Exemple-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +108,7 @@
 		A04822476691AE6CA7ED0C7A /* Pods-Exemple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exemple.debug.xcconfig"; path = "Target Support Files/Pods-Exemple/Pods-Exemple.debug.xcconfig"; sourceTree = "<group>"; };
 		ADB524F05B0B43329D35602E /* Pods-Exemple-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exemple-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Exemple-tvOS/Pods-Exemple-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		E6C75CAC2D4BBC15322DEDD0 /* Pods-Exemple-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exemple-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Exemple-tvOS/Pods-Exemple-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E8B6FBC46FE2E452E0A0082E /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EF98C84FB00F9CE097E54171 /* libPods-Exemple.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Exemple.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +148,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3BC53C38256CD3290021E9FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC53C3F256CD3290021E9FF /* UserNotificationsUI.framework in Frameworks */,
+				3BC53C3D256CD3290021E9FF /* UserNotifications.framework in Frameworks */,
+				5ADA3A8410EF384E16C2F591 /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,6 +181,8 @@
 		13B07FAE1A68108700A75B9A /* Exemple */ = {
 			isa = PBXGroup;
 			children = (
+				3BC53CD8256CFAF20021E9FF /* call.wav */,
+				3BC53C53256CD3720021E9FF /* Exemple.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -132,6 +190,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				3BC53C9B256CF2D30021E9FF /* MeetNotification.swift */,
+				3BC53C99256CF2D20021E9FF /* Exemple-Bridging-Header.h */,
+				3BC53C9A256CF2D20021E9FF /* Exemple-tvOS-Bridging-Header.h */,
 			);
 			name = Exemple;
 			sourceTree = "<group>";
@@ -145,8 +206,22 @@
 				33DC617E5A11104A61ABDF85 /* libPods-Exemple-ExempleTests.a */,
 				6F10F72B96E545727C405B8D /* libPods-Exemple-tvOS.a */,
 				F50CDDC7C45F7151B06EA889 /* libPods-Exemple-tvOSTests.a */,
+				3BC53C3C256CD3290021E9FF /* UserNotifications.framework */,
+				3BC53C3E256CD3290021E9FF /* UserNotificationsUI.framework */,
+				42CCD4629F280791ACB4C079 /* libPods-OneSignalNotificationServiceExtension.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BC53C40256CD3290021E9FF /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				3BC53C93256CD5840021E9FF /* OneSignalNotificationServiceExtension.entitlements */,
+				3BC53C41256CD3290021E9FF /* NotificationViewController.swift */,
+				3BC53C43256CD3290021E9FF /* MainInterface.storyboard */,
+				3BC53C46256CD3290021E9FF /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		5C42818001D99F663DA19320 /* Pods */ = {
@@ -160,6 +235,8 @@
 				ADB524F05B0B43329D35602E /* Pods-Exemple-tvOS.release.xcconfig */,
 				5F201878D89B04564A7E40BA /* Pods-Exemple-tvOSTests.debug.xcconfig */,
 				90AF382B7251D92F5F1B8158 /* Pods-Exemple-tvOSTests.release.xcconfig */,
+				E8B6FBC46FE2E452E0A0082E /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				457E98B2C36B44D4A715E57F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -177,6 +254,7 @@
 				13B07FAE1A68108700A75B9A /* Exemple */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ExempleTests */,
+				3BC53C40256CD3290021E9FF /* OneSignalNotificationServiceExtension */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				5C42818001D99F663DA19320 /* Pods */,
@@ -193,6 +271,7 @@
 				00E356EE1AD99517003FC87E /* ExempleTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* Exemple-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* Exemple-tvOSTests.xctest */,
+				3BC53C3B256CD3290021E9FF /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,10 +312,12 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				72F7EFAFC58D427435F3E2A5 /* [CP] Embed Pods Frameworks */,
 				BDD40555DF64CE5E676F0BED /* [CP] Copy Pods Resources */,
+				3BC53C4D256CD3290021E9FF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3BC53C48256CD3290021E9FF /* PBXTargetDependency */,
 			);
 			name = Exemple;
 			productName = Exemple;
@@ -282,12 +363,31 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* Exemple-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3BC53C3A256CD3290021E9FF /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC53C4A256CD3290021E9FF /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				06278BBE437E2563CBE54BD2 /* [CP] Check Pods Manifest.lock */,
+				3BC53C37256CD3290021E9FF /* Sources */,
+				3BC53C38256CD3290021E9FF /* Frameworks */,
+				3BC53C39256CD3290021E9FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 3BC53C3B256CD3290021E9FF /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -296,16 +396,22 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = QG8KA4P8TE;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1220;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+					};
+					3BC53C3A256CD3290021E9FF = {
+						CreatedOnToolsVersion = 12.2;
+						DevelopmentTeam = QG8KA4P8TE;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -326,6 +432,7 @@
 				00E356ED1AD99517003FC87E /* ExempleTests */,
 				2D02E47A1E0B4A5D006451C7 /* Exemple-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* Exemple-tvOSTests */,
+				3BC53C3A256CD3290021E9FF /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -342,6 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC53CD9256CFAF20021E9FF /* call.wav in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
@@ -351,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC53CDA256CFAF20021E9FF /* call.wav in Resources */,
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +468,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC53C39256CD3290021E9FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC53C45256CD3290021E9FF /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +495,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		06278BBE437E2563CBE54BD2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		218663267F1A6F7994E3AB53 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -612,6 +751,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				3BC53C9C256CF2D30021E9FF /* MeetNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +761,7 @@
 			files = (
 				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
 				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
+				3BC53C9D256CF2D30021E9FF /* MeetNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +770,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCD954D1E0B4F2C00145EB5 /* ExempleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BC53C37256CD3290021E9FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC53C42256CD3290021E9FF /* NotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +794,11 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* Exemple-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
+		3BC53C48256CD3290021E9FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BC53C3A256CD3290021E9FF /* OneSignalNotificationServiceExtension */;
+			targetProxy = 3BC53C47256CD3290021E9FF /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -657,6 +811,14 @@
 			path = Exemple;
 			sourceTree = "<group>";
 		};
+		3BC53C43256CD3290021E9FF /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BC53C44256CD3290021E9FF /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -664,6 +826,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B6965B1CE0DD734F906E18E /* Pods-Exemple-ExempleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -687,6 +850,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B361DD5B9615AC14B38C155 /* Pods-Exemple-ExempleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ExempleTests/Info.plist;
@@ -707,8 +871,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A04822476691AE6CA7ED0C7A /* Pods-Exemple.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Exemple/Exemple.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QG8KA4P8TE;
 				ENABLE_BITCODE = NO;
@@ -724,8 +890,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiscus.meet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiscus.pushnotif;
 				PRODUCT_NAME = Exemple;
+				SWIFT_OBJC_BRIDGING_HEADER = "Exemple-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -736,8 +903,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 416AADA92BBC1AFF8EF4CDE2 /* Pods-Exemple.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Exemple/Exemple.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QG8KA4P8TE;
 				INFOPLIST_FILE = Exemple/Info.plist;
@@ -748,8 +917,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiscus.meet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiscus.pushnotif;
 				PRODUCT_NAME = Exemple;
+				SWIFT_OBJC_BRIDGING_HEADER = "Exemple-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -762,6 +932,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -778,6 +949,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Exemple-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Exemple-tvOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -790,6 +964,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -806,6 +981,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Exemple-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Exemple-tvOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -815,6 +992,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F201878D89B04564A7E40BA /* Pods-Exemple-tvOSTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -842,6 +1020,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90AF382B7251D92F5F1B8158 /* Pods-Exemple-tvOSTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -862,6 +1041,67 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Exemple-tvOS.app/Exemple-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
+		3BC53C4B256CD3290021E9FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8B6FBC46FE2E452E0A0082E /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QG8KA4P8TE;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiscus.pushnotif.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BC53C4C256CD3290021E9FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 457E98B2C36B44D4A715E57F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QG8KA4P8TE;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiscus.pushnotif.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1013,6 +1253,15 @@
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
 				2D02E49A1E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC53C4A256CD3290021E9FF /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC53C4B256CD3290021E9FF /* Debug */,
+				3BC53C4C256CD3290021E9FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -67,6 +67,7 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - OneSignal (2.15.4)
   - OpenSSL-Universal (1.0.2.20):
     - OpenSSL-Universal/Static (= 1.0.2.20)
   - OpenSSL-Universal/Static (1.0.2.20)
@@ -237,6 +238,9 @@ PODS:
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
   - React-jsinspector (0.63.3)
+  - react-native-onesignal (3.9.2):
+    - OneSignal (= 2.15.4)
+    - React (< 1.0.0, >= 0.13.0)
   - react-native-qiscus-meet (2.3.0):
     - QiscusMeetFramework (= 2.9.3)
     - React
@@ -329,6 +333,7 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (~> 0.33.1)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - OneSignal (< 3.0, >= 2.9.3)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -341,6 +346,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-onesignal (from `../node_modules/react-native-onesignal`)
   - react-native-qiscus-meet (from `../node_modules/react-native-qiscus-meet`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -366,6 +372,7 @@ SPEC REPOS:
     - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
+    - OneSignal
     - OpenSSL-Universal
     - QiscusMeetFramework
     - YogaKit
@@ -401,6 +408,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-onesignal:
+    :path: "../node_modules/react-native-onesignal"
   react-native-qiscus-meet:
     :path: "../node_modules/react-native-qiscus-meet"
   React-RCTActionSheet:
@@ -442,6 +451,7 @@ SPEC CHECKSUMS:
   FlipperKit: 6dc9b8f4ef60d9e5ded7f0264db299c91f18832e
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  OneSignal: 6647275955d0f06d9e17c90dc93af9d85ecfd2b9
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
   QiscusMeetFramework: eedcfbe1f16920d21e286cfd74f306930e225001
   RCTRequired: 48884c74035a0b5b76dbb7a998bd93bcfc5f2047
@@ -454,6 +464,7 @@ SPEC CHECKSUMS:
   React-jsi: df07aa95b39c5be3e41199921509bfa929ed2b9d
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
+  react-native-onesignal: 9fdf8cf885105266960a75567a38823bd824a22b
   react-native-qiscus-meet: 953b5952629fd7845448823fe93bfa1061c129f6
   React-RCTActionSheet: 53ea72699698b0b47a6421cb1c8b4ab215a774aa
   React-RCTAnimation: 1befece0b5183c22ae01b966f5583f42e69a83c2
@@ -468,6 +479,6 @@ SPEC CHECKSUMS:
   Yoga: 7d13633d129fd179e01b8953d38d47be90db185a
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 3bd3bbed5efe1ef0a65be4611bbd081991c4f596
+PODFILE CHECKSUM: d41d0e9d87fd68287b90918988e124f1054c3499
 
 COCOAPODS: 1.9.3

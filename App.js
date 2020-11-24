@@ -9,8 +9,7 @@ function App() {
     const url = 'https://call.qiscus.com';
     const appId = "meetstage-iec22sd";
 
-    OneSignal.init("APP_ID_ONESIGNAL", {kOSSettingsKeyAutoPrompt: false, 
-      kOSSettingsKeyInAppLaunchURL: false}); // Start OneSignal
+    OneSignal.init("cda22834-968e-4a35-8e16-b4eb1879f3b1", {kOSSettingsKeyAutoPrompt : false, kOSSettingsKeyInAppLaunchURL: false, kOSSettingsKeyInFocusDisplayOption:2});
 
     OneSignal.inFocusDisplaying(2); // Show native notifications even if the app is open 
 
