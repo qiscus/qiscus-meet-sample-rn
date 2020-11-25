@@ -18,7 +18,7 @@ import UserNotificationsUI
     }
     @objc func createNotification(userInfo: NSDictionary) {
         print("userInfo :\(userInfo)")
-      UIApplication.shared.applicationIconBadgeNumber = Int.random(in: 0..<10)
+//      UIApplication.shared.applicationIconBadgeNumber = Int.random(in: 0..<10)
       
         let callRoomId = "qiscusroom"
         let content = UNMutableNotificationContent()

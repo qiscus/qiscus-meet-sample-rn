@@ -65,6 +65,7 @@ static void InitializeFlipper(UIApplication *application) {
    completionHandler(UNNotificationPresentationOptionSound);
 }
 
+// from apns
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result)) completionHandler {
   NSLog(@"Received notification: %@", userInfo);
   static int i=1;
@@ -89,14 +90,13 @@ static void InitializeFlipper(UIApplication *application) {
 }
 
 #define PushKit Delegate Methods
-
 - (void)pushRegistry:(PKPushRegistry *)registry didUpdatePushCredentials:(PKPushCredentials *)credentials forType:(NSString *)type{
     if([credentials.token length] == 0) {
         NSLog(@"voip token NULL");
         return;
     }
 
-    NSLog(@"PushCredentials: %@", [self stringWithDeviceToken:credentials.token] );
+    NSLog(@"Pushkit token: %@", [self stringWithDeviceToken:credentials.token] );
 }
 
 - (void)pushRegistry:(PKPushRegistry *)registry didInvalidatePushTokenForType:(PKPushType)type{
@@ -104,12 +104,16 @@ static void InitializeFlipper(UIApplication *application) {
     NSLog(@"pushRegistry: didInvalidatePushTokenForType:");
 }
 
+// from pushkit
 - (void)pushRegistry:(PKPushRegistry *)registry didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(NSString *)type {
 
   NSLog(@"pushRegistry: didReceiveIncomingPushWithPayload: forType:");
   NSLog(@"type: %@", type);
   NSLog(@"payload.dictionaryPayload: %@", payload.dictionaryPayload);
   NSLog(@"--------------------------------------------------------");
+  MeetNotification *notif = [MeetNotification new];
+  [notif createNotificationWithUserInfo:payload.dictionaryPayload];
+  
   
 }
 
