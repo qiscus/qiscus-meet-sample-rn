@@ -13,6 +13,7 @@
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 #import "Exemple-Swift.h"
 
+
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
   SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
@@ -46,21 +47,70 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  PKPushRegistry* voipRegistry = [[PKPushRegistry alloc] initWithQueue:dispatch_get_main_queue()];
+  voipRegistry.delegate = (id<PKPushRegistryDelegate>)self;
+  
+  // Initiate registration.
+  voipRegistry.desiredPushTypes = [NSSet setWithObject:PKPushTypeVoIP];
   return YES;
 }
 
--(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-  //do stuff
-//  static int i=1;
-//  [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+        willPresentNotification:(UNNotification *)notification
+        withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+   // Update the app interface directly.
+ 
+    // Play a sound.
+   completionHandler(UNNotificationPresentationOptionSound);
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result)) completionHandler {
   NSLog(@"Received notification: %@", userInfo);
   static int i=1;
   [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
-//  MeetNotification *notif = [MeetNotification new];
-//  [notif createNotificationWithUserInfo:userInfo];
+  MeetNotification *notif = [MeetNotification new];
+  [notif createNotificationWithUserInfo:userInfo];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  NSLog(@"The generated device token string is : %@",[self stringWithDeviceToken:deviceToken]);
+}
+
+- (NSString *)stringWithDeviceToken:(NSData *)deviceToken {
+    const char *data = [deviceToken bytes];
+    NSMutableString *token = [NSMutableString string];
+
+    for (NSUInteger i = 0; i < [deviceToken length]; i++) {
+        [token appendFormat:@"%02.2hhX", data[i]];
+    }
+
+    return [token copy];
+}
+
+#define PushKit Delegate Methods
+
+- (void)pushRegistry:(PKPushRegistry *)registry didUpdatePushCredentials:(PKPushCredentials *)credentials forType:(NSString *)type{
+    if([credentials.token length] == 0) {
+        NSLog(@"voip token NULL");
+        return;
+    }
+
+    NSLog(@"PushCredentials: %@", [self stringWithDeviceToken:credentials.token] );
+}
+
+- (void)pushRegistry:(PKPushRegistry *)registry didInvalidatePushTokenForType:(PKPushType)type{
+    
+    NSLog(@"pushRegistry: didInvalidatePushTokenForType:");
+}
+
+- (void)pushRegistry:(PKPushRegistry *)registry didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(NSString *)type {
+
+  NSLog(@"pushRegistry: didReceiveIncomingPushWithPayload: forType:");
+  NSLog(@"type: %@", type);
+  NSLog(@"payload.dictionaryPayload: %@", payload.dictionaryPayload);
+  NSLog(@"--------------------------------------------------------");
+  
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge

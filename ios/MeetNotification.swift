@@ -26,13 +26,13 @@ import UserNotificationsUI
         content.subtitle = "from juang"
         //Play custom sound
         content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "call.wav"))
-        Timer.scheduledTimer(withTimeInterval: 7, repeats: true) { timer in
-            self.removeNotif(id: callRoomId)
-            if self.current <= self.ringingTime {
+//        Timer.scheduledTimer(withTimeInterval: 7, repeats: true) { timer in
+//            self.removeNotif(id: callRoomId)
+//            if self.current <= self.ringingTime {
                 self.localNotif(content: content, id: callRoomId)
-            }
-            self.current += 1
-        }
+//            }
+//            self.current += 1
+//        }
     }
     func localNotif(content: UNMutableNotificationContent, id: String) {
         // show this notification five seconds from now
