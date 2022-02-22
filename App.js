@@ -1,76 +1,113 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { useEffect } from 'react';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import QiscusMeet, { QiscusMeetView } from 'react-native-qiscus-meet';
 
-import React, {Component} from 'react';
-import {Alert, Button, Text, TextInput, View} from 'react-native';
-import QiscusMeet, { QiscusMeetEvents} from 'react-native-qiscus-meet';
+function App() {
 
-export default class App extends Component {
-  constructor(pops) {
-    super(pops)
-    this.state = {
-      id_room: ''
-    }
-  }
-  joinRoom () {
-    QiscusMeet.initialize();
-    QiscusMeetEvents.addListener('CONFERENCE_LEFT', (data) => {
-        // this.props.navigation.navigate("Home")
-    });
-      setTimeout(() => {
-        QiscusMeet.call("https://meet.qiscus.com/"+this.state.id_room);
-      }, 2000);
+  useEffect(() => {
+    const url = 'https://call.qiscus.com';
+    const appId = "meetstage-iec22sd";
+    QiscusMeet.setup(appId, url);
+  }, [])
+  function endCall(nativeEvent) {
+    QiscusMeet.endCall();
   }
   
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text_room}>Sample Qiscus Meet React Native</Text>
-        <TextInput
-            placeholder={"Input ID Room"}
-            underlineColorAndroid={"#EC407A"}
-            onChangeText={(id_room) => this.setState({id_room})}
-            style={styles.input}
-        />
-        <Button 
-        style={styles.submitButton}
-        title="Join Room" 
-        onPress={() => { this.joinRoom()}} />
-      </View>
-    );
+  function onConferenceTerminated(nativeEvent) {
+    /* Conference terminated event */
+    console.log(nativeEvent)
   }
+
+  function onConferenceJoined(nativeEvent) {
+    /* Conference joined event */
+    console.log(nativeEvent)
+  }
+
+  function onConferenceWillJoin(nativeEvent) {
+    /* Conference will join event */
+    console.log(nativeEvent)
+  }
+  function onParticipantJoined(nativeEvent){
+        /* Participant  joined conference */
+    console.log(nativeEvent)
+  }
+  function onParticipantLeft(nativeEvent){
+        /* Participant left event */
+        endCall();
+        console.log(nativeEvent)
+
+  }
+
+
+  function call() {
+    const data = {
+          displayName: 'Meet User',
+          email: 'user@qiscus.net',
+          room: 'roomtest',
+          avatar: 'https:/gravatar.com/avatar/abc123',
+          videoMuted : true,
+          audioMuted : true,
+          audioOnly: true,
+          overFlowMenu:true,
+          chatEnabled :false,
+          meetingPassword:false,
+          inviteEnabled:false,
+          meetingNameEnabled:true,
+          toolboxEnabled :true,
+          raiseHandEnabled:true,
+          tileViewEnabled:false,
+          toolboxAlwaysVisible:true,
+          screenSharing:true,
+          participantMenu:true,
+          videoMuteButton:true,
+          audioMuteButton:true,
+          securityDialog:true,
+          muteEveryoneButton:true,
+          muteEveryoneVideo:true,
+          conferenceTimerEnabled:true
+    };
+    QiscusMeet.call(data);
+  }
+
+  return (
+    <>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => endCall()}
+      >
+        <Text>End Call</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => call()}
+      >
+        <Text>Start all</Text>
+      </TouchableOpacity>
+      <QiscusMeetView
+        onConferenceTerminated={e => onConferenceTerminated(e)}
+        onConferenceJoined={e => onConferenceJoined(e)}
+        onConferenceWillJoin={e => onConferenceWillJoin(e)}
+        onParticipantJoined={e => onParticipantJoined(e)}
+        onParticipantLeft={e => onParticipantLeft(e)}
+        style={{
+          flex: 1,
+          height: '100%',
+          width: '100%',
+          marginTop: 20,
+        }}
+      />
+    </>
+  )
 }
 
-const styles = {
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+const styles = StyleSheet.create({
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    marginTop: 10,
+
   },
-  input: {
-    width: 100,
-    height: 35,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderBottomWidth: 1
-  },
-  submitButton: {
-    backgroundColor: "#9aca62",
-    borderRadius: 2,
-    fontStyle: "normal",
-    fontWeight: "600",
-    fontSize: 12,
-    color: "white",
-    paddingVertical: 15,
-    paddingHorizontal: 10,
-    textTransform: "uppercase",
-    alignItems: "center"
-  },
-  text_room :{fontWeight:"bold", fontSize:20}
-}
+});
+
+export default App;
